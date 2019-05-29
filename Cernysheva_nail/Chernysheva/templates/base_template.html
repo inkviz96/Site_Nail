@@ -1,0 +1,95 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    <title>{% block title %}
+        Title
+    {% endblock %}
+    </title>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light">
+          <a class="navbar-brand" href="#">chernysheva_nail</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item"><a class="nav-link" href="#">Записаться</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">Прайс</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">Контакты</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <div class="container slider">
+      <div id="sliderControls" class="carousel slide carousel-fade" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#sliderControls" data-slide-to="0" class="active"></li>
+          <li data-target="#sliderControls" data-slide-to="1"></li>
+          <li data-target="#sliderControls" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="{% static 'img/6KOnYOOWYNc.jpg' %}" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="{% static 'img/DDq6YV7KMx4.jpg' %}" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="{% static 'img/Kb7zPSGtIhk.jpg' %}" class="d-block w-100" alt="...">
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#sliderControls" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Предыдущая</span>
+        </a>
+        <a class="carousel-control-next" href="#sliderControls" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Следующая</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="grid-posts">
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <p>{% block content %}
+                  Здравствуйте, меня зовут Алена , я начинающий мастер маникюра 💕
+                  Приглашаю вас к себе на процедуру ✂️
+                  Делаю комбинированный/аппаратный маникюр 💅
+                  Все инструменты проходят дезинфекцию ( раствор + сухожаровой шкаф)👌
+                  ❗️Комбинированный/аппаратный маникюр + выравнивание+ покрытие гель-лаком 600р❗️
+                  Ⓜ️ Проспект большевиков
+                {% endblock %}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% block newsblock %}
+
+    {% endblock %}
+
+    {% block form_app %}
+
+    {% endblock %}
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" crossorigin="anonymous"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+  </body>
+</html>

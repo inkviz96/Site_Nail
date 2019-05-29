@@ -1,0 +1,71 @@
+{% extends 'Chernysheva_nail/base_Cernysheva_nail_template.html' %}
+
+{% load static %}
+
+
+{% block form_app %}
+
+
+<div class="col-md-6 offset-md-3 text-center after-post">
+   <form action="{% url 'post' %}" method="POST">
+    {% csrf_token %}
+
+    <div class="form-row">
+      {% for field in form %}
+        {% if field.name == "phone_number_of_client" %}
+        <div class="col-md-4 mb-3" value="{{ field.name }}">
+          <label for="validationDefaultUsername">Номер телефона</label>
+          <div class="input-group-prepend">
+          <span class="input-group-text" id="inputGroupPrepend2">+7</span>
+
+          {{ field }}
+          </div>
+        </div>
+        {% elif field.name == "name_of_client" %}
+        <div class="col-md-4 mb-3" value="{{ field.name }}">
+          <div>
+            <label for="validationDefaultUsername">Имя</label>
+            {{ field }}
+          </div>
+        </div>
+        {% elif field.name == "second_name_of_client" %}
+        <div class="col-md-4 mb-3" value="{{ field.name }}">
+          <div>
+            <label for="validationDefaultUsername">Фамилия</label>
+            {{ field }}
+          </div>
+        </div>
+        {% elif field.name == "chooise_appointment_service" %}
+        <div class="col-md-4 mb-3" value="{{ field.name }}">
+          <div>
+            <label for="validationDefaultUsername"> </label>
+            {{ field }}
+          </div>
+        </div>
+        {% elif field.name == "date_and_time_appointment" %}
+        <div class="col-md-4 mb-3">
+          <div>
+            <label for="validationDefaultUsername">Дата и время</label>
+
+            <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+
+              <option value="{{ field }}"></option>
+            </select>
+          </div>
+        </div>
+
+        {% endif %}
+        {% endfor %}
+
+    </div>
+
+    <div class="btn-mrg">
+      <button class="btn btn-primary load-more" type="submit">
+      Записаться
+      <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
+      </button>
+    </div>
+  </form>
+</div>
+
+{% endblock %}
